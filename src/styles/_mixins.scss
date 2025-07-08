@@ -1,0 +1,23 @@
+@mixin fluid-text($min, $max) {
+   font-size: clamp(#{$min}px, #{$max / 1300 * 100}vw, #{$max}px); 
+}
+
+@mixin reset-button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+@mixin hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+
+    @media (hover: none) {
+        &:active {
+            @content;
+        }
+    }
+}

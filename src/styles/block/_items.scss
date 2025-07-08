@@ -1,0 +1,57 @@
+
+
+.item {
+    max-width: 350px;
+    width: 100%;
+
+
+    &__inner:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    &__inner {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__image {
+        object-fit: cover;
+        border-radius: var(--border-radius);
+        width: 100%;
+        height: 100%;
+        
+    }
+
+    &__title, &__button-fav {
+        position: absolute;
+        padding: 10px;
+    }
+    &__title {
+        top: 0;
+        left: 0;
+        display: inline-flex;
+        width: 100%;
+        height: 30%;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    }
+
+    &__button-fav {
+        top: 0;
+        right: 0;
+        background: transparent;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__button-listen {
+        cursor: pointer;
+        background: transparent;
+        color: inherit;
+    }
+}
