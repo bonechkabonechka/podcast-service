@@ -18,8 +18,8 @@ const categories = [
 ]
 
 const availability = [
-    {availble : "All"},
-    {availble : "On site"},
+    {available : "All"},
+    {available : "On site"},
 ]
 
 export { listOfLanguages, categories, availability }
