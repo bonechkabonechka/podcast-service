@@ -5,10 +5,12 @@ import { useFilters } from "../components/hooks/useFilters";
 import { useSearch } from "../components/hooks/useSearch";
 import Filter from "../components/Filter";
 import PodcastsList from "../components/PodcastsList";
+import Pagination from "../components/Pagination";
 
 export default function Podcasts() {
     const {language} = useParams()
     const navigate = useNavigate()
+    
 
     const { setters, filters } = useFilters(language)
     const { items, isLoading, error } = usePodcastsData(filters)
@@ -33,10 +35,16 @@ export default function Podcasts() {
                 isLoading={isLoading}
                 error={error}
                 />
+                <Pagination
+                page={filters.page}
+                setPage={setters.setPage}
+                />
+
             </div>
         </section>
     )
 }
+
 
 
 

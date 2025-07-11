@@ -568,6 +568,7 @@ h4 {
 }
 .pagination-item {
   padding-inline: 10px;
+  cursor: pointer;
 }
 
 .help {
