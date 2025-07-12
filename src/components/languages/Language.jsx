@@ -25,7 +25,8 @@ export default function Language() {
         // Проверяем, что audioRef.current существует
         if (audioRef.current) {
             // Попытка автоматического воспроизведения
-            const playPromise = audioRef.current.play();
+            audioRef.current.volume = 0.1
+            const playPromise = audioRef.current.play()
             
             // Обработка возможной ошибки автоматического воспроизведения
             if (playPromise !== undefined) {
@@ -45,8 +46,8 @@ export default function Language() {
         exit='exit'
         transition={{ duration: 0.2, ease: "easeInOut" }}
         >
-            {/* <audio ref={audioRef} src={`/audio/${language}/2.mp3`} autoPlay 
-                loop></audio> */}
+            <audio ref={audioRef} src={`/audio/${language}/2.mp3`} autoPlay 
+                loop></audio>
             <div className="language-overlay">
                 Hello {language}
             </div>

@@ -13,7 +13,8 @@ export const usePodcastsData = (filters) => {
     useEffect(() => {
         setIsLoading(true)
         setErorr(null)
-        fetch(`https://68629af796f0cc4e34ba5d13.mockapi.io/v1/photos?language=${languageId}&page=${page}&limit=9${available}${category}`)
+        // fetch(`https://68629af796f0cc4e34ba5d13.mockapi.io/v1/photos?language=${languageId}&page=${page}&limit=9${available}${category}`)
+        fetch(`http://localhost:8000/v1/podcasts?language=${languageId}&page=${page}&limit=9${available}${category}`)
         .then(result => result.json())
         .then((json) => {
             if (Array.isArray(json)) {
