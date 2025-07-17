@@ -1,9 +1,8 @@
 .podcasts {
-
     &__body {
         display: flex;
         flex-direction: column;
-        row-gap: 30px;
+        row-gap: 20px;
     }
 
     &__items {
@@ -11,7 +10,7 @@
     justify-items: center;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
-    row-gap: 40px;
+    gap: 30px;
     
     @include tablet {
         grid-template-columns: repeat(2, 1fr);
@@ -21,5 +20,6 @@
         grid-template-columns: repeat(1, 1fr);
     }
     }
-
+    
 }
+

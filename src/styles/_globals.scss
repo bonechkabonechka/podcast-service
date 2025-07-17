@@ -1,6 +1,4 @@
 body {
-    height: 100vh;
-    
     @include fluid-text(18, 24);
 
     font-family: var(--font-family-base);
@@ -41,4 +39,23 @@ h3 {
 
 h4 {
     @include fluid-text(17, 28);
+}
+
+::-webkit-scrollbar {
+    background-color: var(--color-dark);
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar {
+    background-color: var(--color-dark);
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--color-dark-green);
+}
+
+* {
+    scrollbar-color: var(--color-dark-green) var(--color-dark);
+    scrollbar-width: thin;
 }

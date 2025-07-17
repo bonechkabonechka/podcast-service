@@ -1,20 +1,20 @@
 .features {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    &__box {
-        margin-top: 50px;
-        width: 800px;
-        height: 1000px;
-        background-color: var(--color-blue);
-        border-radius: var(--border-radius)
-    }
+  &__box {
+    margin-top: 50px;
+    width: 800px;
+    height: 1000px;
+    background-color: var(--color-blue);
+    border-radius: var(--border-radius);
+  }
 
-    &__text {
-        @include fluid-text(30, 40);
-        color: var(--color-dark);
-        padding: 30px;
-        font-weight: 600;
-    }
+  &__text {
+    @include fluid-text(30, 40);
+    color: var(--color-dark);
+    padding: 30px;
+    font-weight: 600;
+  }
 }
