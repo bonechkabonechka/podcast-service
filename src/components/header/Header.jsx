@@ -36,22 +36,22 @@ export default function Header() {
                     <ul className="header__menu-list">
                         <li className="header__menu-item">
                             <NavLink className={setActive} to="/">
-                                Главная
+                                Main
                             </NavLink>
                         </li>
                         <li className="header__menu-item">
                             <NavLink className={setActive} to="/help">
-                                Как пользоваться
+                                Help
                             </NavLink>
                         </li>
                         <li className="header__menu-item">
                             <NavLink className={setActive} to="/features">
-                                Фичи
+                                Features
                             </NavLink>
                         </li>
                         <li className="header__menu-item">
                             <NavLink className={setActive} to="/podcasts">
-                                Слушать
+                                Podcasts
                             </NavLink>
                         </li>
                     </ul>
