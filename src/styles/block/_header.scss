@@ -71,9 +71,10 @@
 
 .telegram {
     @include reset-button;
-
+    display: flex;
+    column-gap: 10px;
     background-color: var(--color-green);
-    padding: 15px;
+    padding: 10px;
     border-radius: var(--border-radius);
-    color: var(--color-light);
+    color: var(--color-dark);
 }
