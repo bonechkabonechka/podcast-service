@@ -5,13 +5,17 @@ body {
     font-weight: 400;
     color: var(--color-light);
     background-color: var(--color-dark);
-} 
+}
 
 p {
     @include fluid-text(17, 28);
 }
 
-a, button, input, textarea, svg * {
+a,
+button,
+input,
+textarea,
+svg * {
     transition-duration: var(--transition-duration);
 }
 
@@ -20,8 +24,10 @@ a {
     color: inherit;
 }
 
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-weight: 700;
 }
 
@@ -51,7 +57,7 @@ h4 {
     border-radius: var(--border-radius);
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background-color: var(--color-dark-green);
 }
 

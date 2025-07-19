@@ -1,8 +1,8 @@
-import { categories, availability } from '../constants/appConstants';
-import { listOfLanguages } from '../constants/appConstants';
-import { Skeleton } from './Skeleton';
+import React from 'react';
 import Item from './Item';
-export default function PodcastsList({ items, isLoading, error }) {
+import { Skeleton } from './Skeleton';
+
+export default function PodcastsList({ items, isLoading, error, onPlayClick }) {
     if (isLoading) {
         return (
             <div className="podcasts__items">
@@ -29,13 +29,16 @@ export default function PodcastsList({ items, isLoading, error }) {
 
     return (
         <div className="podcasts__items">
-            {items.map((obj, index) => (
-                // <Item key={obj.id}
+            {items.map((item) => (
                 <Item
-                    key={index}
-                    name={obj.name}
-                    image={obj.image}
-                    description={obj.description}
+                    key={item.id}
+                    id={item.id}
+                    image={item.image}
+                    name={item.name}
+                    description={item.description}
+                    duration={item.duration}
+                    audio={item.audio}
+                    onPlayClick={onPlayClick}
                 />
             ))}
         </div>

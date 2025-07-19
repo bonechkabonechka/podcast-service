@@ -29,16 +29,7 @@ body,
   Убираем внешние отступы вертикали нужным тегам,
   у которых есть атрибут class
  */
-:where(h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-dl):where([class]) {
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
   margin-block: 0;
 }
 
@@ -98,25 +89,25 @@ button {
 
 html {
   /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
+   Пригодится в большинстве ситуаций
+   (когда, например, нужно будет "прижать" футер к низу сайта)
+  */
   height: 100%;
   /**
-    Плавный скролл
-   */
+   Плавный скролл
+  */
   scroll-behavior: smooth;
 }
 
 body {
   /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
+   Пригодится в большинстве ситуаций
+   (когда, например, нужно будет "прижать" футер к низу сайта)
+  */
   min-height: 100%;
   /**
-    Унифицированный интерлиньяж
-   */
+   Унифицированный интерлиньяж
+  */
   line-height: 1.5;
 }
 
@@ -232,7 +223,11 @@ p {
   font-size: clamp(17px, 2.1538461538vw, 28px);
 }
 
-a, button, input, textarea, svg * {
+a,
+button,
+input,
+textarea,
+svg * {
   transition-duration: var(--transition-duration);
 }
 
@@ -241,7 +236,10 @@ a {
   color: inherit;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 700;
 }
 
@@ -361,10 +359,13 @@ h4 {
   padding: 0;
   background-color: transparent;
   border: none;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
   background-color: var(--color-green);
-  padding: 15px;
+  padding: 10px;
   border-radius: var(--border-radius);
-  color: var(--color-light);
+  color: var(--color-dark);
 }
 
 .footer {
@@ -479,11 +480,12 @@ h4 {
   background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
   z-index: 2;
 }
-.item__title, .item__button-fav {
+.item__title, .item__button-fav, .item__duration {
   position: absolute;
   padding: 10px;
 }
 .item__title {
+  font-weight: 600;
   position: absolute;
   top: 0;
   left: 0;
@@ -502,6 +504,7 @@ h4 {
   font-size: clamp(16px, 1.3846153846vw, 18px);
   padding: 3px;
   display: -webkit-box;
+  line-height: 1.35;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -518,10 +521,22 @@ h4 {
   cursor: pointer;
   z-index: 3;
 }
+.item__duration {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: var(--border-radius);
+}
 .item__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }
 .item__button-listen {
   display: flex;
@@ -670,6 +685,196 @@ h4 {
   color: var(--color-dark);
   padding: 30px;
   font-weight: 600;
+}
+
+/* Модальное окно */
+.audio-player-modal {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 50px;
+  width: var(--container-width);
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+}
+
+.audio-player-content {
+  position: relative;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: var(--border-radius-big);
+  padding: 25px;
+  width: 80%;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+
+/* Кнопка закрытия */
+.audio-player-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--color-light);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Информация о треке */
+.audio-player-info {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.audio-player-image {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--border-radius);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.audio-player-details {
+  flex: 1;
+}
+
+.audio-player-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.audio-player-description {
+  color: #777;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.audio-player-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.audio-player-progress-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.audio-player-time {
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+}
+
+.audio-player-progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #777;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.audio-player-progress-fill {
+  height: 100%;
+  background: var(--color-green);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.audio-player-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.audio-player-btn {
+  background: var(--color-light);
+  color: var(--color-dark);
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.audio-player-btn:hover:not(:disabled) {
+  background: var(--color-green);
+}
+
+.audio-player-btn:disabled {
+  background: #777;
+  cursor: not-allowed;
+}
+
+.audio-player-play-btn {
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-player-volume {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.audio-player-volume-icon {
+  font-size: 15px;
+}
+
+.audio-player-volume-slider {
+  width: 100px;
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.audio-player-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--color-green);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.audio-player-volume-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: var(--color-green);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.audio-player-volume-value {
+  font-size: 12px;
+  color: #777;
+  min-width: 35px;
 }
 
 .language {

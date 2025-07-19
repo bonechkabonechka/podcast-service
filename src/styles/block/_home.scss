@@ -3,8 +3,6 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 120px;
-    
-    
 
     @include tablet {
         margin-top: 100px;
@@ -17,7 +15,7 @@
         color: inherit;
         max-width: 66%;
     }
-    
+
     &__title {
         @include fluid-text(48, 120);
     }
@@ -26,10 +24,10 @@
         @include fluid-text(18, 24);
     }
 
-    &__languages{
+    &__languages {
         @include fluid-text(24, 48);
 
-        &-list{
+        &-list {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -38,23 +36,25 @@
         }
 
         &-link {
-            
             @include hover {
-              color: var(--color-green);  
+                color: var(--color-green);
             }
         }
     }
-
 }
 
 .lang {
-//   color: var(--color-green);
-    background-image: linear-gradient(to right, var(--color-light), var(--color-green), var(--color-dark-green));
+    //   color: var(--color-green);
+    background-image: linear-gradient(
+        to right,
+        var(--color-light),
+        var(--color-green),
+        var(--color-dark-green)
+    );
     background-clip: text;
-    -webkit-background-clip: text; 
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     min-width: fit-content;
     white-space: nowrap;
-
 }

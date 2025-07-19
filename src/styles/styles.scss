@@ -1,16 +1,8 @@
 @import 'normalize', 'fonts', 'mixins', 'media', 'variables', 'utils', 'globals';
 
-@import 'block/header', 
-        'block/footer', 
-        'block/home', 
-        'block/items', 
-        'block/podcasts', 
-        'block/filter',
-        'block/pagination',
-        'block/help',
-        'block/features';
+@import 'block/header', 'block/footer', 'block/home', 'block/items',
+    'block/podcasts', 'block/filter', 'block/pagination', 'block/help',
+    'block/features', 'block/audioPlayer';
 
-@import 'language/languages',
-        'language/english',
-        'language/russian',
-        'language/chinese';
+@import 'language/languages', 'language/english', 'language/russian',
+    'language/chinese';
