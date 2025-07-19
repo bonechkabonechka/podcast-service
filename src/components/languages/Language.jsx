@@ -15,22 +15,22 @@ export default function Language() {
     const audioRef = useRef(null);
     const backgroundImage = `url(/src/assets/img/languages/${language}/1.jpg)`;
 
-    useEffect(() => {
-        // Проверяем, что audioRef.current существует
-        if (audioRef.current) {
-            // Попытка автоматического воспроизведения
-            audioRef.current.volume = 0.02;
-            const playPromise = audioRef.current.play();
+    // useEffect(() => {
+    //     // Проверяем, что audioRef.current существует
+    //     if (audioRef.current) {
+    //         // Попытка автоматического воспроизведения
+    //         audioRef.current.volume = 0.02;
+    //         const playPromise = audioRef.current.play();
 
-            // Обработка возможной ошибки автоматического воспроизведения
-            if (playPromise !== undefined) {
-                playPromise.catch((error) => {
-                    console.log('Автовоспроизведение было запрещено:', error);
-                    // Здесь можно добавить кнопку для ручного воспроизведения
-                });
-            }
-        }
-    }, [language]);
+    //         // Обработка возможной ошибки автоматического воспроизведения
+    //         if (playPromise !== undefined) {
+    //             playPromise.catch((error) => {
+    //                 console.log('Автовоспроизведение было запрещено:', error);
+    //                 // Здесь можно добавить кнопку для ручного воспроизведения
+    //             });
+    //         }
+    //     }
+    // }, [language]);
 
     return (
         <motion.div
@@ -43,12 +43,12 @@ export default function Language() {
             exit="exit"
             transition={{ duration: 0.2, ease: 'easeInOut' }}
         >
-            <audio
+            {/* <audio
                 ref={audioRef}
                 src={`/audio/${language}/2.mp3`}
                 autoPlay
                 loop
-            ></audio>
+            ></audio> */}
             <div className="language-overlay"></div>
             <div className="language-content">
                 <Podcasts />

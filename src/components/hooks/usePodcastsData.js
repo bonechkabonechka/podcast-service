@@ -1,9 +1,11 @@
+import js from '@eslint/js';
 import { useState, useEffect } from 'react';
 
 export const usePodcastsData = (filters) => {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setErorr] = useState(null);
+    const [totalPages, setTotalPages] = useState(1);
 
     const { languageId, categoryId, availableId, page } = filters;
 
@@ -19,8 +21,9 @@ export const usePodcastsData = (filters) => {
         )
             .then((result) => result.json())
             .then((json) => {
-                if (Array.isArray(json)) {
-                    setItems(json);
+                if (json) {
+                    setItems(json.items || []);
+                    setTotalPages(json.pages || 1);
                 } else {
                     setItems([]);
                 }
@@ -33,5 +36,5 @@ export const usePodcastsData = (filters) => {
             .finally(() => setIsLoading(false));
     }, [categoryId, availableId, languageId, page]);
 
-    return { items, isLoading, error };
+    return { items, isLoading, error, totalPages };
 };

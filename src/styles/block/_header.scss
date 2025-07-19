@@ -1,7 +1,7 @@
 .header {
     height: var(--header-height);
     padding-top: 30px;
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: space-between;
 
@@ -19,7 +19,6 @@
     }
 
     &__menu {
-
         @include fluid-text(18, 28);
 
         &-list {
@@ -61,28 +60,20 @@
                 height: 3px;
                 background-color: var(--color-green);
                 transition-duration: inherit;
-                
             }
 
             &.active-link::after {
                 width: 100%;
-                
             }
         }
-        
     }
-
 }
 
 .telegram {
     @include reset-button;
-    
+
     background-color: var(--color-green);
     padding: 15px;
     border-radius: var(--border-radius);
     color: var(--color-light);
-
-    
 }
-
-

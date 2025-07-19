@@ -1,13 +1,13 @@
 .pagination {
-  &-list {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    column-gap: 5px;
-  }
+    &-list {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        column-gap: 5px;
+    }
 
-  &-item {
-    padding-inline: 10px;
-    cursor: pointer;
-  }
+    &-item {
+        padding-inline: 10px;
+        cursor: pointer;
+    }
 }

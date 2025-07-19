@@ -1,0 +1,186 @@
+/* Модальное окно */
+.audio-player-modal {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 50px;
+    width: var(--container-width);
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+}
+
+.audio-player-content {
+    position: relative;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: var(--border-radius-big);
+    padding: 25px;
+    width: 80%;
+    backdrop-filter: blur(15px);
+}
+
+/* Кнопка закрытия */
+.audio-player-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-light);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Информация о треке */
+.audio-player-info {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.audio-player-image {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.audio-player-details {
+    flex: 1;
+}
+
+.audio-player-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.audio-player-description {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.audio-player-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.audio-player-progress-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.audio-player-time {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+}
+
+.audio-player-progress-bar {
+    flex: 1;
+    height: 6px;
+    background: #777;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.audio-player-progress-fill {
+    height: 100%;
+    background: var(--color-green);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.audio-player-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.audio-player-btn {
+    background: var(--color-light);
+    color: var(--color-dark);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.audio-player-btn:hover:not(:disabled) {
+    background: var(--color-green);
+}
+
+.audio-player-btn:disabled {
+    background: #777;
+    cursor: not-allowed;
+}
+
+.audio-player-play-btn {
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audio-player-volume {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.audio-player-volume-icon {
+    font-size: 15px;
+}
+
+.audio-player-volume-slider {
+    width: 100px;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-player-volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--color-green);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.audio-player-volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--color-green);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.audio-player-volume-value {
+    font-size: 12px;
+    color: #777;
+    min-width: 35px;
+}

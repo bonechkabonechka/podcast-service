@@ -1,6 +1,28 @@
 import React from 'react';
 
-export default function Items({ id, image, name, description }) {
+export default function Item({
+    id,
+    image,
+    name,
+    description,
+    duration,
+    audio,
+    onPlayClick,
+}) {
+    const handlePlayClick = () => {
+        if (audio) {
+            onPlayClick({
+                id,
+                audioSrc: `http://localhost:8000${audio}`,
+                title: name,
+                description,
+                image,
+            });
+        } else {
+            console.warn('No audio URL provided');
+        }
+    };
+
     return (
         <div className="item">
             <div className="item__inner">
@@ -21,18 +43,23 @@ export default function Items({ id, image, name, description }) {
                         <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z" />
                     </svg>
                 </button>
+                <div className="item__duration">{duration}</div>
             </div>
             <div className="item__footer">
                 <div className="item__description">
                     <p>{description}</p>
                 </div>
-                <button className="item__button-listen">
+                <button
+                    className="item__button-listen"
+                    onClick={handlePlayClick}
+                    disabled={!audio}
+                >
                     <svg
                         fill="#ffffff"
                         id="Layer_1"
-                        height="50"
+                        height="55"
                         viewBox="0 0 24 24"
-                        width="50"
+                        width="55"
                         xmlns="http://www.w3.org/2000/svg"
                         data-name="Layer 1"
                     >
