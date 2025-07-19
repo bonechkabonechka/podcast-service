@@ -1,12 +1,37 @@
-# React + Vite
+Подкаст-платформа
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Веб-приложение для прослушивания и управления подкастами с возможностью:
 
-Currently, two official plugins are available:
+    Просмотра списка подкастов с фильтрами (Язык, категория, доступность)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    Аудиоплеера с управлением воспроизведением
 
-## Expanding the ESLint configuration
+    Избранного (добавление/удаление подкастов) [В разработке]
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    Пагинации и поиска
+
+Интеграция:
+
+    Работа с Telegram (хранение аудио, синхронизация избранного) [В разработке]
+
+Frontend:
+
+    React (Библиотека для UI)
+    React Router (Навигация)
+    Fetch API (HTTP-запросы к бэкенду)
+    Motion Framer (Анимации переходов)
+    Scss (Препроцессор)
+
+Backend:
+
+    FastAPI (Python-фреймворк для API)
+    SQLAlchemy (ORM для работы с БД)
+    SQLite (База данных)
+    Uvicorn (ASGI-сервер)
+
+<img width="2560" height="1440" alt="изображение" src="https://github.com/user-attachments/assets/6b4646f7-b598-441d-9dcd-e0752ddb3a97" />
+<img width="2560" height="1440" alt="изображение" src="https://github.com/user-attachments/assets/1dade129-509f-425e-b5c7-303c82c1c016" />
+<img width="2560" height="1440" alt="изображение" src="https://github.com/user-attachments/assets/00002a33-216d-4073-adb2-249d2eb848fe" />
+
+
+
