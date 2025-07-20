@@ -1,0 +1,13 @@
+# Игнорировать папки
+../.idea/
+__pycache__/
+venv/
+*.py[cod]
+data/
+
+# Игнорировать файлы
+*.log
+*.tmp
+.env
+.DS_Store
+*.db
